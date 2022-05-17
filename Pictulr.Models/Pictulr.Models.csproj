@@ -51,6 +51,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ListNodes.cs" />
+    <Compile Include="ListPictureClassification.cs" />
+    <Compile Include="ListPictures.cs" />
+    <Compile Include="ListSubjectClassification.cs" />
+    <Compile Include="ListSubjects.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
