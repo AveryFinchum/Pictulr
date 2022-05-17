@@ -311,6 +311,20 @@
     <Content Include="Scripts\jquery-3.6.0.slim.min.map" />
     <Content Include="Scripts\jquery-3.6.0.min.map" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Pictuler.Services\Pictulr.Services.csproj">
+      <Project>{39b5a68b-f1d2-4e96-b57c-57dca5c26d8a}</Project>
+      <Name>Pictulr.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Pictulr.Data\Pictulr.Data.csproj">
+      <Project>{203d8479-ad95-4d0d-baec-5dcb7341b4a2}</Project>
+      <Name>Pictulr.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Pictulr.Models\Pictulr.Models.csproj">
+      <Project>{4136bf63-655f-45da-8385-245a2ba85303}</Project>
+      <Name>Pictulr.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
