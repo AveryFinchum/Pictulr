@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Pictulr.Data
 {
-    internal class SubjectClassification
+    public class SubjectClassification
     {
         [Key]
         [Display(Name = "Classification ID")]

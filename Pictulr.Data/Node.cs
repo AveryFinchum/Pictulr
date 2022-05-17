@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 /// </summary>
 namespace Pictulr.Data
 {
-    internal class Node
+    public class Node
     {
         [Key]
         [Display(Name = "Node ID")]

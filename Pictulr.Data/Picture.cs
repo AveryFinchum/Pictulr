@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Pictulr.Data
 {
-    internal class Picture
+    public class Picture
     {
         [Key]
         [Display(Name ="Picture ID")]

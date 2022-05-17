@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Pictulr.Data
 {
-    internal class Subject
+    public class Subject
     {
         [Key]
         [Display(Name = "Subject ID")]
