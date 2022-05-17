@@ -13,17 +13,22 @@ namespace Pictulr.Data
         [Key]
         [Display(Name = "Classification ID")]
         public int ClassificationId { get; set; }
-        [Required]
-        [Display(Name = "Picture Title")]
-        [ForeignKey("PictureTitle")]
-        public string PictureTitle { get; set; }
+
+        [Display(Name = "Picture ID")]
+        [ForeignKey("Picture")]
+        public int? PictureID { get; set; }
+        public virtual Picture Picture { get; set; }
+
         [Required]
         public virtual ICollection<SubjectClassification> Classifications { get; set; }
         public string Classification { get; set; }
-        [Required]
+
+
         [Display(Name = "Node ID")] //the name of the node that took the pic
-        [ForeignKey("NodeNameId")]
-        public string NodeNameId { get; set; }
+        [ForeignKey(nameof(Node))]
+        public int? NodeNameId { get; set; }
+        public virtual Node Node { get; set; }
+
         [Display(Name = "Classification Method")]
         public string ClassificationMethod { get; set; }
         [Required]

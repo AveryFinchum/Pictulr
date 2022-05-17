@@ -15,8 +15,9 @@ namespace Pictulr.Data
         public int ClassificationId { get; set; }
         
         [Display(Name = "Subject Name")]
-        [ForeignKey("SubjectName")]
-        public int SubjectName { get; set; }
+        [ForeignKey(nameof(Subject))]
+        public int? SubjectId { get; set; }
+        public virtual Subject Subject { get; set; }
 
         [Display(Name = "Owner ID")]
         public Guid OwnerId { get; set; }
@@ -26,10 +27,10 @@ namespace Pictulr.Data
         public virtual ICollection<PictureClassification> Classifications { get; set; }
         public string Classification  { get; set; }
 
-        [Required]
         [Display(Name = "Node ID")] //the name of the node that took the pic
-        [ForeignKey("NodeNameId")] 
-        public string NodeNameId { get; set; }
+        [ForeignKey(nameof(Node))]
+        public int? NodeNameId { get; set; }
+        public virtual Node Node { get; set; }
 
         [Required]
         [Display(Name = "Time")]

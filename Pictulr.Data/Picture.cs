@@ -16,17 +16,22 @@ namespace Pictulr.Data
         [Required]
         [Display(Name ="Owner ID")]
         public Guid OwnerId { get; set; }
-        [Required]
+
         [Display(Name = "Subject Name")]
-        [ForeignKey("SubjectName")]
-        public string SubjectName { get; set; }
+        [ForeignKey(nameof(Subject))]
+        public int? SubjectName { get; set; }
+        public virtual Subject Subject { get; set; }
+
         [Required]
         [Display(Name ="Picture Title")]
         public string PictureTitle { get; set; }
-        [Required]
+
         [Display(Name ="Node ID")] //the name of the node that took the pic
-        [ForeignKey("NodeNameId")] 
-        public string NodeNameId { get; set; }
+        [ForeignKey( nameof(Node))] 
+        public int? NodeNameId { get; set; }
+        public virtual Node Node { get; set; }
+
+
         [Display(Name ="Image Location")]
         public string ImageLocation { get; set; }
         [Display(Name ="Image Data")]
