@@ -205,6 +205,16 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\SeedContent\1280px-American_Eskimo_Dog.jpg" />
+    <Content Include="Assets\SeedContent\Adorable-animal-cat-20787.jpg" />
+    <Content Include="Assets\SeedContent\adorable_animal_breed_canine_cute_dog_doggy_603714.jpg" />
+    <Content Include="Assets\SeedContent\Cat_March_2010-1.jpg" />
+    <Content Include="Assets\SeedContent\golden puppy.jpg" />
+    <Content Include="Assets\SeedContent\Inbread cat.jpg" />
+    <Content Include="Assets\SeedContent\javacatscafe18Feb20180118.jpg" />
+    <Content Include="Assets\SeedContent\My_dog.jpg" />
+    <Content Include="Assets\SeedContent\orange cat.jpg" />
+    <Content Include="Assets\SeedContent\Red_Kitten_01.jpg" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -218,6 +228,8 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Assets\SeedContent\Bernese-mountain-dog-grass.webp" />
+    <Content Include="Assets\SeedContent\domestic-dog_thumb_4x3.webp" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -270,7 +282,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Assets\SeedContent\" />
     <Folder Include="Views\Image\" />
     <Folder Include="Views\Node\" />
     <Folder Include="Views\PictureClassify\" />

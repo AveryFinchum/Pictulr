@@ -62,6 +62,10 @@
     <Compile Include="Migrations\202205171952496_firstMigration.designer.cs">
       <DependentUpon>202205171952496_firstMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202205180240069_new.cs" />
+    <Compile Include="Migrations\202205180240069_new.designer.cs">
+      <DependentUpon>202205180240069_new.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Node.cs" />
     <Compile Include="Picture.cs" />
@@ -77,6 +81,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202205171952496_firstMigration.resx">
       <DependentUpon>202205171952496_firstMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205180240069_new.resx">
+      <DependentUpon>202205180240069_new.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
