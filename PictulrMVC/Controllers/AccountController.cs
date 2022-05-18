@@ -8,7 +8,7 @@ using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
-using PictulrMVC.Data;
+using Pictulr.Data;
 using PictulrMVC.Models;
 
 namespace PictulrMVC.Controllers

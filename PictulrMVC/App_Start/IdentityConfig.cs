@@ -10,8 +10,8 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
-using PictulrMVC.Data;
-using PictulrMVC.Models;
+using Pictulr.Data;
+using Pictulr.Models;
 
 namespace PictulrMVC
 {

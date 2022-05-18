@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Pictulr.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -6,48 +7,45 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Pictulr.Data
+namespace Pictulr.Models
 {
-    public class Picture
+    /// <summary>
+    /// Allows any devices to upload pictures 
+    /// </summary>
+    internal class PictureAPICreate
     {
         [Key]
-        [Display(Name ="Picture ID")]
+        [Display(Name = "Picture ID")]
         public int PictureId { get; set; }
         [Required]
-        [Display(Name ="Owner ID")]
+        [Display(Name = "Owner ID")]
         public Guid OwnerId { get; set; }
 
+        [Display(Name = "Subject Name")]
         [ForeignKey(nameof(Subject))]
-        public int? SubjectId { get; set; }
+        public int? SubjectName { get; set; }
         public virtual Subject Subject { get; set; }
 
-        [Display(Name = "Subject Name")]
-        public string SubjectName { get; set; }
-
-
         [Required]
-        [Display(Name ="Picture Title")]
+        [Display(Name = "Picture Title")]
         public string PictureTitle { get; set; }
 
-        [Display(Name ="Node ID")] //the name of the node that took the pic
-        [ForeignKey( nameof(Node))] 
+        [Display(Name = "Node ID")] //the name of the node that took the pic
+        [ForeignKey(nameof(Node))]
         public int? NodeNameId { get; set; }
         public virtual Node Node { get; set; }
 
-        public string NodeName { get; set; }
 
-        [Display(Name ="Image Location")]
+        [Display(Name = "Image Location")]
         public string ImageLocation { get; set; }
-        [Display(Name ="Image Data")]
+        [Display(Name = "Image Data")]
         public string Base64EncodedImage { get; set; }
         [Required]
-        [Display(Name ="Time Created")]
+        [Display(Name = "Time Created")]
         public DateTimeOffset CreatedUtc { get; set; }
-        [Display(Name ="Time Recieved")]
+        [Display(Name = "Time Recieved")]
         public DateTimeOffset? RecievedUtc { get; set; }
-        [Display(Name ="Metadata")]
+        [Display(Name = "Metadata")]
         public string OptionalMetadata { get; set; }
-        public bool AddImage { get; set; }
     }
 }
-

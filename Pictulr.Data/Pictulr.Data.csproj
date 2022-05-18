@@ -66,6 +66,22 @@
     <Compile Include="Migrations\202205180240069_new.designer.cs">
       <DependentUpon>202205180240069_new.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202205181203370_addingSeedData.cs" />
+    <Compile Include="Migrations\202205181203370_addingSeedData.designer.cs">
+      <DependentUpon>202205181203370_addingSeedData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205181417119_addingSeedAgain.cs" />
+    <Compile Include="Migrations\202205181417119_addingSeedAgain.designer.cs">
+      <DependentUpon>202205181417119_addingSeedAgain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205181420305_addingSeedAgain1.cs" />
+    <Compile Include="Migrations\202205181420305_addingSeedAgain1.designer.cs">
+      <DependentUpon>202205181420305_addingSeedAgain1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202205181422028_addingSeedPictures.cs" />
+    <Compile Include="Migrations\202205181422028_addingSeedPictures.designer.cs">
+      <DependentUpon>202205181422028_addingSeedPictures.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Node.cs" />
     <Compile Include="Picture.cs" />
@@ -84,6 +100,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202205180240069_new.resx">
       <DependentUpon>202205180240069_new.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205181203370_addingSeedData.resx">
+      <DependentUpon>202205181203370_addingSeedData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205181417119_addingSeedAgain.resx">
+      <DependentUpon>202205181417119_addingSeedAgain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205181420305_addingSeedAgain1.resx">
+      <DependentUpon>202205181420305_addingSeedAgain1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205181422028_addingSeedPictures.resx">
+      <DependentUpon>202205181422028_addingSeedPictures.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

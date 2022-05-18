@@ -9,6 +9,7 @@ namespace Pictulr.Models
 {
     public class ListPictures
     {
+        [Key]
         [Display(Name = "Picture ID")]
         public int PictureId { get; set; }
         public string PictureTitle { get; set; }
