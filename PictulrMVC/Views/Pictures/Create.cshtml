@@ -1,0 +1,77 @@
+﻿@model  Pictulr.Data.Picture[]
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Picture Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="containter my-5">
+        <div class="row py-4">
+            <div class="form-horizontal col-sm-6 col-md-8 col-lg-6">
+                <h4>Select Images to </h4>
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                
+
+                @for (int i = 0; i < Model.Count(); i++)
+                {
+                    @Html.HiddenFor(model => model[i].ImageLocation)
+                    @Html.HiddenFor(model => model[i].NodeName)
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model[i].PictureTitle, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-4">
+                            @Html.EditorFor(model => model[i].PictureTitle, new { htmlAttributes = new { @class = "form-control" } })
+                            @* @Html.ValidationMessageFor(model => model[i].PictureTitle, "", new { @class = "text-danger" })*@
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row my-5">
+                            <div class="col-md-3 col-md-offset-1 my-6">
+                                <img src="@Url.Content(Model[i].ImageLocation)" height="150" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model[i].SubjectName, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-4">
+                            @Html.EditorFor(model => model[i].SubjectName, new { htmlAttributes = new { @class = "form-control" } })
+                            @* @Html.ValidationMessageFor(model => model[i].SubjectName, "", new { @class = "text-danger" })*@
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model[i].NodeName, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-4">
+                            @Html.EditorFor(model => model[i].NodeName, new { htmlAttributes = new { @class = "form-control" } })
+                            @* @Html.ValidationMessageFor(model => model[i].NodeName, "", new { @class = "text-danger" })*@
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(model => model[i].AddImage, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-4">
+                            @Html.CheckBoxFor(model => model[i].AddImage, new { htmlAttributes = new { @class = "form-control" } })
+                            @* @Html.ValidationMessageFor(model => model[i].AddImage, "", new { @class = "text-danger" })*@
+                        </div>
+                    </div>
+                    <div></div>
+                    <div></div>
+                }
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-6">
+                        <input type="submit" value="Create" class="btn btn-warning" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+

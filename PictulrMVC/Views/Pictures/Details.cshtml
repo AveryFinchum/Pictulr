@@ -1,0 +1,90 @@
+﻿@model Pictulr.Data.Picture
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Picture</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Node.NodeNameId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Node.NodeNameId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Subject.SubjectName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Subject.SubjectName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OwnerId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OwnerId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PictureTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PictureTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ImageLocation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ImageLocation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Base64EncodedImage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Base64EncodedImage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedUtc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedUtc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RecievedUtc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RecievedUtc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OptionalMetadata)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OptionalMetadata)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.PictureId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
