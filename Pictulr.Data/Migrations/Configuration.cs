@@ -68,7 +68,7 @@
                 SubjectId = 2,
                 PictureTitle = "Mountain Doggo",
                 NodeNameId = 1,
-                ImageLocation = "\\Assets\\SeedContent\\Bernese-mountain-dog-grass.webp",
+                ImageLocation = "\\Assets\\SeedContent\\Bernese-mountain-dog-grass.jpg",
                 Base64EncodedImage = "",
                 CreatedUtc = DateTimeOffset.Now,
                 RecievedUtc = DateTimeOffset.Now,

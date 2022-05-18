@@ -82,6 +82,10 @@
     <Compile Include="Migrations\202205181422028_addingSeedPictures.designer.cs">
       <DependentUpon>202205181422028_addingSeedPictures.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202205181630314_newmigggg.cs" />
+    <Compile Include="Migrations\202205181630314_newmigggg.designer.cs">
+      <DependentUpon>202205181630314_newmigggg.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Node.cs" />
     <Compile Include="Picture.cs" />
@@ -112,6 +116,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202205181422028_addingSeedPictures.resx">
       <DependentUpon>202205181422028_addingSeedPictures.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202205181630314_newmigggg.resx">
+      <DependentUpon>202205181630314_newmigggg.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

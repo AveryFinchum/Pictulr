@@ -13,7 +13,7 @@ namespace Pictulr.Data
         [Key]
         [Display(Name ="Picture ID")]
         public int PictureId { get; set; }
-        [Required]
+
         [Display(Name ="Owner ID")]
         public Guid OwnerId { get; set; }
 
@@ -25,7 +25,6 @@ namespace Pictulr.Data
         public string SubjectName { get; set; }
 
 
-        [Required]
         [Display(Name ="Picture Title")]
         public string PictureTitle { get; set; }
 
@@ -40,7 +39,7 @@ namespace Pictulr.Data
         public string ImageLocation { get; set; }
         [Display(Name ="Image Data")]
         public string Base64EncodedImage { get; set; }
-        [Required]
+
         [Display(Name ="Time Created")]
         public DateTimeOffset CreatedUtc { get; set; }
         [Display(Name ="Time Recieved")]

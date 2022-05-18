@@ -16,7 +16,7 @@
     <div class="containter my-5">
         <div class="row py-4">
             <div class="form-horizontal col-sm-6 col-md-8 col-lg-6">
-                <h4>Select Images to </h4>
+                <h4>Select Images to Add</h4>
                 <hr />
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
@@ -34,7 +34,7 @@
                     <div class="form-group">
                         <div class="row my-5">
                             <div class="col-md-3 col-md-offset-1 my-6">
-                                <img src="@Url.Content(item.ImageLocation)" width="125" height="125" />
+                                <img src="@Url.Content(item.ImageLocation)" height="125" />
                             </div>
                         </div>
                     </div>
@@ -60,6 +60,7 @@
                         </div>
                     </div>
                     <div></div>
+                    <br />
                     <div></div>
                 }
                 <div class="form-group">

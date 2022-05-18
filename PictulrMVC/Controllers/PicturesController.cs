@@ -32,44 +32,9 @@ namespace PictulrMVC.Controllers
         // GET: Pictures
         public ActionResult Index()
         {
-            using (var ctx = new ApplicationDbContext())
-            {
-                string[] LocalPics = Directory.GetFiles(filePath);
-                List<Picture> modelPictures = new List<Picture>();
-
-                foreach (var item in LocalPics)
-                {
-                    var foundImage = ctx.Pictures.FirstOrDefault(x => x.ImageLocation == item);
-                    if (foundImage == null)
-                    {
-                        modelPictures.Add(new Picture { ImageLocation = item });
-                    }
-
-                }
-
-                //var pictures = db.Pictures.Include(p => p.Node).Include(p => p.Subject);
-                return View(modelPictures);
-            }
+            return RedirectToAction("Create");
         }
 
-        //GET
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Index(List<Picture> listPictures)
-        {
-            if (!ModelState.IsValid) return View(listPictures);
-
-            var service = new PictureService();
-
-            if (service.CreatePicture(listPictures))
-            {
-                TempData["SaveResult"] = "Success!";
-                return RedirectToAction("Index");
-            };
-            ModelState.AddModelError("", "Image(s) could not be created.");
-
-            return View(listPictures);
-        }
 
         // GET: Pictures/Details/5
         public ActionResult Details(int? id)
@@ -86,12 +51,41 @@ namespace PictulrMVC.Controllers
             return View(picture);
         }
 
+
+
         // GET: Pictures/Create
         public ActionResult Create()
         {
-            ViewBag.NodeNameId = new SelectList(db.Nodes, "NodeId", "NodeNameId");
-            ViewBag.SubjectName = new SelectList(db.Subjects, "SubjectId", "SubjectName");
-            return View();
+            using (var ctx = new ApplicationDbContext())
+            {
+                string[] LocalPics = Directory.GetFiles(filePath);
+                List<Picture> modelPictures = new List<Picture>();
+
+                foreach (var item in LocalPics)
+                {
+                    //C: \Users\avfin\Documents\Coding\ElevenFifty\Assignments\elevennoteMVC\PictulrMVC\PictulrMVC\Assets\SeedContent\
+                    //var splitPath = item.Split();
+
+                    string toBeSearched = "PictulrMVC\\PictulrMVC";
+                    string directory = item.Substring(item.IndexOf(toBeSearched) + toBeSearched.Length);
+
+                    var foundImage = ctx.Pictures.FirstOrDefault(x => x.ImageLocation == directory);
+                    if (foundImage == null)
+                    {
+                        modelPictures.Add(new Picture { 
+                            ImageLocation = "~" + directory,
+                            PictureTitle = "",
+                            SubjectName = "",
+                            NodeName = "seedData"
+                            
+                        });
+                    }
+
+                }
+
+                //var pictures = db.Pictures.Include(p => p.Node).Include(p => p.Subject);
+                return View(modelPictures.ToArray());
+            }
         }
 
         // POST: Pictures/Create
@@ -99,18 +93,31 @@ namespace PictulrMVC.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "PictureId,OwnerId,SubjectName,PictureTitle,NodeNameId,ImageLocation,Base64EncodedImage,CreatedUtc,RecievedUtc,OptionalMetadata")] Picture picture)
+        public ActionResult Create(List<Picture> model)
         {
-            if (ModelState.IsValid)
+            bool sendAgain = false;
+            var sendList = model.Where(x => x.AddImage).ToArray();
+
+            foreach (var item in sendList)
             {
-                db.Pictures.Add(picture);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                if (item.PictureTitle == "") sendAgain = true;
+                if (item.SubjectName == "") sendAgain = true;
             }
 
-            ViewBag.NodeNameId = new SelectList(db.Nodes, "NodeId", "NodeNameId", picture.NodeNameId);
-            ViewBag.SubjectName = new SelectList(db.Subjects, "SubjectId", "SubjectName", picture.SubjectName);
-            return View(picture);
+            if (sendAgain) return View(sendList.ToArray());
+
+            var service = new PictureService();
+
+
+            if (service.CreatePicture(model))
+            {
+                TempData["SaveResult"] = "Success!";
+                return RedirectToAction("Index");
+            };
+            ModelState.AddModelError("", "Image(s) could not be created.");
+
+            return View(model);
+
         }
 
         // GET: Pictures/Edit/5

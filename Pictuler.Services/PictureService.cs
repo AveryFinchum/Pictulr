@@ -32,7 +32,15 @@ namespace Pictuler.Services
 
                     ctx.Pictures.Add(image);
                 }
-                ctx.SaveChanges();
+                try
+                {
+                    var result = ctx.SaveChanges();
+                }
+                catch (Exception e)
+                {
+
+                    throw;
+                }
             }
             return true;
         }
