@@ -191,13 +191,8 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ImageController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\NodeController.cs" />
     <Compile Include="Controllers\NodesController.cs" />
-    <Compile Include="Controllers\PictureClassifyController.cs" />
-    <Compile Include="Controllers\PictureController.cs" />
     <Compile Include="Controllers\PicturesController.cs" />
-    <Compile Include="Controllers\SubjectClassifyController.cs" />
-    <Compile Include="Controllers\SubjectController.cs" />
     <Compile Include="Controllers\SubjectsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -231,8 +226,8 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap.min.css.map" />
-    <Content Include="Assets\SeedContent\Bernese-mountain-dog-grass.webp" />
-    <Content Include="Assets\SeedContent\domestic-dog_thumb_4x3.webp" />
+    <Content Include="Assets\Wireframe Drawing.pdf" />
+    <None Include="Properties\PublishProfiles\PictulrMVC20220518 - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -269,6 +264,7 @@
     <Content Include="Views\Subjects\Details.cshtml" />
     <Content Include="Views\Subjects\Edit.cshtml" />
     <Content Include="Views\Subjects\Index.cshtml" />
+    <Content Include="Views\Subject\Create.cshtml" />
     <None Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />

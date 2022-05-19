@@ -15,14 +15,14 @@ namespace PictulrMVC.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "Learn More about how to use Pictulr";
 
             return View();
         }
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "plz dont contact me lul";
 
             return View();
         }

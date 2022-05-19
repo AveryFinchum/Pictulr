@@ -10,35 +10,18 @@
     @Html.ActionLink("Create New", "Create")
 </p>
 <table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.SubjectId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PictureTitle)
-        </th>
+    @*<tr>
         <th>
             @Html.DisplayNameFor(model => model.SubjectName)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CreatedUtc)
-        </th>
+        
         <th></th>
-    </tr>
+    </tr>*@
 
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.SubjectId)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PictureTitle)
-        </td>
-        <td>
             @Html.DisplayFor(modelItem => item.SubjectName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CreatedUtc)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
