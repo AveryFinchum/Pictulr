@@ -4,7 +4,7 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Picture Index</h2>
+<h2>List Pics</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -24,86 +24,37 @@
                 @foreach (var item in Model)
                 {
 
-                    <div class="form-group">
-                        @Html.LabelFor(model => item.PictureTitle, htmlAttributes: new { @class = "control-label col-md-2" })
-                        <div class="col-md-4">
-                            @Html.EditorFor(model => item.PictureTitle, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => item.PictureTitle, "", new { @class = "text-danger" })
+
+                    <div class="container col-md-pull-1 col-md-6">
+                        <div class="col-xs-4 col-sm-3 col-md-4 my-6">
+                            <img src="@Url.Content(item.ImageLocation)" width="125" height="125" />
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="row my-5">
-                            <div class="col-md-3 col-md-offset-1 my-6">
-                                <img src="@Url.Content(item.ImageLocation)" height="125" />
+                        <div class="col-xs-9 col-sm-9 col-md-3 my-6">
+                            <div class="panel panel-warning" style="width: 25rem;">
+
+                                <dl class="dl-horizontal">
+                                    <dt class="col-xs-1">Picture Title: </dt>
+                                    <dd>
+                                        @Html.DisplayFor(model => item.PictureTitle)
+                                    </dd>
+                                </dl>
+                                <dl class="dl-horizontal">
+                                    <dt class="col-xs-1">Subject: </dt>
+                                    <dd>
+                                        @Html.DisplayFor(model => item.SubjectName)
+                                    </dd>
+                                </dl>
+
                             </div>
+                            @Html.ActionLink("Update Image", $"Edit/{item.PictureId}", null, new { @class = "btn btn-warning btn-xs" })
+                            @Html.ActionLink("Delete", $"Delete/{item.PictureId}", null, new { @class = "btn btn-outline-danger btn-xs" })
                         </div>
                     </div>
-                    <div class="form-group">
-                        @Html.LabelFor(model => item.SubjectName, htmlAttributes: new { @class = "control-label col-md-2" })
-                        <div class="col-md-4">
-                            @Html.EditorFor(model => item.SubjectName, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => item.SubjectName, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        @Html.LabelFor(model => item.NodeName, htmlAttributes: new { @class = "control-label col-md-2" })
-                        <div class="col-md-4">
-                            @Html.EditorFor(model => item.NodeName, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => item.NodeName, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        @Html.LabelFor(model => item.AddImage, htmlAttributes: new { @class = "control-label col-md-2" })
-                        <div class="col-md-4">
-                            @Html.CheckBoxFor(model => item.AddImage, new { htmlAttributes = new { @class = "form-control" } })
-                            @Html.ValidationMessageFor(model => item.AddImage, "", new { @class = "text-danger" })
-                        </div>
-                    </div>
-                    <div></div>
-                    <br />
-                    <div></div>
+
                 }
-                <div class="form-group">
-                    <div class="col-md-offset-2 col-md-6">
-                        <input type="submit" value="Create" class="btn btn-warning" />
-                    </div>
-                </div>
+
             </div>
         </div>
     </div>
 }
 
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Node.NodeNameId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Subject.SubjectName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.OwnerId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PictureTitle)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ImageLocation)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Base64EncodedImage)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CreatedUtc)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.RecievedUtc)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.OptionalMetadata)
-        </th>
-        <th></th>
-    </tr>
-
-
-</table>

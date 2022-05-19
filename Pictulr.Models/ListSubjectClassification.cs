@@ -9,6 +9,7 @@ namespace Pictulr.Models
 {
     public class ListSubjectClassification
     {
+        [Key]
         [Display(Name = "Classification ID")]
         public int ClassificationId { get; set; }
         [Display(Name = "Subject Name")]

@@ -11,12 +11,8 @@ namespace Pictulr.Models
 {
     public class ListSubjects
     {
-        [Display(Name = "Subject ID")]
-        [ForeignKey(nameof(Subject))]
-        public int? SubjectId { get; set; }
-        public virtual Subject Subject { get; set; }
-        public string PictureTitle { get; set; }
-        [Display(Name = "Time Created")]
-        public DateTimeOffset CreatedUtc { get; set; }
+        [Display(Name = "Subject Name")]
+        public string SubjectName { get; set; }
+
     }
 }

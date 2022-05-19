@@ -32,9 +32,14 @@ namespace PictulrMVC.Controllers
         // GET: Pictures
         public ActionResult Index()
         {
-            return RedirectToAction("Create");
-        }
 
+            using (var ctx = new ApplicationDbContext())
+            {
+                var dbPics = ctx.Pictures.ToList();
+
+                return View(dbPics);
+            }
+        }
 
         // GET: Pictures/Details/5
         public ActionResult Details(int? id)

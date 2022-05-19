@@ -5,12 +5,35 @@
 <div class="jumbotron">
     <h1>Pictulr</h1>
     <p class="lead">Pictulr is an easy to use platform for categorizing and classifying images for your experiments. </p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+    <a href="https://github.com/AveryFinchum/Pictulr/blob/main/README.md" class="btn btn-primary btn-lg">Learn more &raquo;</a>
+    <a href="https://github.com/AveryFinchum/Pictulr/blob/main/README.md" class="btn btn-primary btn-lg">FAQ's &raquo;</a>
+    <a href="https://github.com/AveryFinchum/Pictulr/blob/main/README.md" class="btn btn-primary btn-lg">Videos &raquo;</a>
 </div>
 
 <div class="jumbotron">
-    <h2>Click Below to add some pictures. </h2>
+    <h3>Pictures</h3>
+    <p>Click Below to add some Pictures. </p>
     @Html.ActionLink("Add Pictures", "Index", "Pictures", new { area = "" }, new { @class = "navbar-brand" })
+</div>
+<div class="jumbotron">
+    <h3>Subjects</h3>
+    <p>Click Below to add some Subjects. </p>
+    @Html.ActionLink("Add Subjects", "Index", "Subjects", new { area = "" }, new { @class = "navbar-brand" })
+</div>
+<div class="jumbotron">
+    <h3>Nodes</h3>
+    <p>Click Below to add some Nodes. </p>
+    @Html.ActionLink("Add Nodes", "Index", "Nodes", new { area = "" }, new { @class = "navbar-brand" })
+</div>
+<div class="jumbotron">
+    <h3></h3>
+    <p>Click Below to add a PictureClassification. </p>
+    @Html.ActionLink("Add PictureClassifications", "Index", "Pictures", new { area = "" }, new { @class = "navbar-brand" })
+</div>
+<div class="jumbotron">
+    <h3>Pictures</h3>
+    <p>Click Below to add a SubjectClassification. </p>
+    @Html.ActionLink("Add SubjectClassifications", "Index", "Pictures", new { area = "" }, new { @class = "navbar-brand" })
 </div>
 
 <div class="row">
