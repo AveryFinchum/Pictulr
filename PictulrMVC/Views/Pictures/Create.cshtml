@@ -28,31 +28,6 @@
                     @Html.HiddenFor(model => model[i].NodeName)
 
 
-                    @*
-            <div class="d-flex flex-lg-row flex-column align-items-md-center justify-content-lg-center">
-                @foreach (var item in Model)
-                {
-                    <div class="col-2 p-2 mr-4 card text-success bg-dark border-success mb-3" style="max-width: 20rem;">
-                        <div class="card-header bg-secondary text-light">@Html.DisplayFor(Modelitem => item.PrinterBrand)</div>
-                        @if (item.Image != null && item.Image.Count() > 0)
-                            <img class="card-img-top mt-1" src="/Printer/RetrieveImage/@item.PrinterId" alt="" />
-                        <div class="card-body bg-dark">
-                            <p class="card-text"> @Html.DisplayFor(Modelitem => item.PrinterModel)</p>
-                        </div>
-                        <div class="d-table-row card-footer bg-secondary">
-                            <div class="row justify-content-around">
-
-                                <input type="button" value="Edit" class="btn btn-warning btn-sm" onclick="window.location = '@Url.Action("Edit", new {id = item.PrinterId})'" />
-
-                                <input type="button" value="Delete" class="btn btn-outline-danger btn-sm" onclick="window.location = '@Url.Action("Delete", new {id = item.PrinterId})'" />
-
-                            </div>
-                            <input type="button" value="Detail" class="btn btn-dark btn-sm btn-block mt-1" onclick="window.location = '@Url.Action("Detail", new {id = item.PrinterId})'" />
-                        </div>
-                    </div>
-                }
-            </div>
-                    *@
 
                     @Html.EditorFor(model => model[i].PictureTitle, new { htmlAttributes = new { @class = "form-control" } })
                     <div class="form-group">
